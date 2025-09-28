@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 import 'package:s2/models/album_model.dart';
+
 class AlbumRequest{
   static String apiURL="https://jsonplaceholder.typicode.com/albums/1";
   static Map<String,String> myHeaders={"Accept":"application/json","token":"kjfbsdjkbfkjdbfjdsfjbij"};

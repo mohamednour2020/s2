@@ -6,7 +6,7 @@ import 'firebase_options.dart'; // يتولد من flutterfire configure
 
 import 'screens/firebase_screens/auth_gate_screen.dart';
 import 'services/cubits/auth_cubit.dart';
-import 'services/firebase_services/auth_repe.dart';
+import 'services/firebase_services/auth_service/auth_repe.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:s2/services/cubits/auth_cubit.dart';
+import 'package:s2/services/firebase_services/firestore_service/firestore_service.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -17,8 +18,10 @@ class HomePage extends StatelessWidget {
         title: const Text('Home'),
         actions: [
           TextButton(
-            onPressed: () => context.read<AuthCubit>().signOut(),
-            child: const Text('Sign out', style: TextStyle(color: Colors.white)),
+            onPressed: () => FireStoreService().getCollection(),
+                // context.read<AuthCubit>().signOut()
+
+            child: const Text('create db', style: TextStyle(color: Colors.black)),
           ),
         ],
       ),

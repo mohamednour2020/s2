@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'depi-9c91f.firebasestorage.app',
     iosBundleId: 'com.example.DEPI',
   );
+
 }

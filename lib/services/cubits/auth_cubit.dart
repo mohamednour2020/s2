@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:s2/services/firebase_services/auth_repe.dart';
+import 'package:s2/services/firebase_services/auth_service/auth_repe.dart';
 
 import 'auth_state.dart';
 
@@ -20,7 +20,7 @@ class AuthCubit extends Cubit<AuthState> {
     });
   }
 
-  Future<void> signInEmail(String email, String password) async {
+    signInEmail(String email, String password) async {
     emit(const AuthLoading());
     try {
       await _repo.signInWithEmail(email: email, password: password);
@@ -31,7 +31,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> registerEmail(String email, String password) async {
+  registerEmail(String email, String password) async {
     emit(const AuthLoading());
     try {
       await _repo.registerWithEmail(email: email, password: password);
@@ -42,7 +42,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> resetPassword(String email) async {
+  resetPassword(String email) async {
     emit(const AuthLoading());
     try {
       await _repo.sendPasswordResetEmail(email);
@@ -55,14 +55,14 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> signOut() async {
+   signOut() async {
     emit(const AuthLoading());
     await _repo.signOut();
     // الاستريم هيحوّل الحالة لـ Unauthenticated تلقائيًا بعد signOut
   }
 
   @override
-  Future<void> close() {
+   close() {
     _sub.cancel();
     return super.close();
   }
