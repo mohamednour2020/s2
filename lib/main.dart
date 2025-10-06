@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:s2/services/firebase_services/notifications_services/firebase_notification_services.dart';
 
 import 'firebase_options.dart'; // يتولد من flutterfire configure
 
@@ -13,7 +14,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  FirebaseNotificationService().setUp();
   runApp(const RootApp());
 }
 

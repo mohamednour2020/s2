@@ -10,7 +10,13 @@ class FireStoreService {
     "password": "11111111",
     "isMale": "true",
   };
-  var user2 = {"email": "wwwww@gmail.com", "password": "33333333"};
+  var user2 = {
+    "email": "wwwww@gmail.com",
+    "password": "33333333",
+    "age":20,
+    "name": {"firstName": "Mohamed", "secondName": "Seif"},
+    "favouritePages": ["yallaKora", "BienSport", "OnTimeSport"],
+  };
   var x = {"camNumber": 4, "price": 98000};
 
   createCollection() {
@@ -23,7 +29,13 @@ class FireStoreService {
   }
 
   updateDocument() {
-    db.collection("users").doc("user1").update(user2);
+    db.collection("users").doc("user1").
+    update({
+      "password": "1111111",
+      "age":FieldValue.delete(),
+      "name.firstName": "Yousef",
+      "favouritePages": FieldValue.arrayRemove(["fe elgoal"]),
+    });
   }
 
   getCollection() {
