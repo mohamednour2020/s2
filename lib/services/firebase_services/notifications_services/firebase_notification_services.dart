@@ -95,7 +95,6 @@ class FirebaseNotificationService {
   Future<void> setUp() async {
     handleBackgroundNotifications();
     await requestPermission();
-
     await flutterLocalNotificationService.setupFlutterNotifications();
     handleForegroundNotifications();
     checkTokenChanging();
